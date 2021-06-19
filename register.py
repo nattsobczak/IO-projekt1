@@ -59,12 +59,12 @@ def Register():
                 with conn:
                     cursor = conn.cursor()
 
-                cursor.execute('CREATE TABLE IF NOT EXISTS Users (Imię i nazwisko TEXT NOT NULL, E-mail TEXT NOT NULL, Telefon TEXT NOT NULL, Username TEXT NOT NULL, Password TEXT NOT NULL)')
+                cursor.execute('CREATE TABLE IF NOT EXISTS Users (FullName TEXT NOT NULL, Email TEXT NOT NULL, Mobile TEXT NOT NULL, Username TEXT NOT NULL, Password TEXT NOT NULL)')
 
-                cursor.execute('INSERT INTO Users (Imię i nazwisko, E-mail, Telefon, Login, Hasło) VALUES (?,?,?,?,?)', (name, email, mobile, username, password))
+                cursor.execute('INSERT INTO Users (FullName, Email, Mobile, Username, Password) VALUES (?,?,?,?,?)', (name, email, mobile, username, password))
                 conn.commit()
 
-                ms.showinfo('Konto zostało utworzone, możesz się zalogować')
+                ms.showinfo('Sukces', 'Konto zostało utworzone, możesz się zalogować')
 
                 Reg.destroy()
             
