@@ -59,9 +59,15 @@ def Register():
                 with conn:
                     cursor = conn.cursor()
 
+<<<<<<< HEAD
                 cursor.execute('CREATE TABLE IF NOT EXISTS Users (FullName TEXT NOT NULL, Email TEXT NOT NULL, Mobile TEXT NOT NULL, Username TEXT NOT NULL, Password TEXT NOT NULL)')
 
                 cursor.execute('INSERT INTO Users (FullName, Email, Mobile, Username, Password) VALUES (?,?,?,?,?)', (name, email, mobile, username, password))
+=======
+                cursor.execute('CREATE TABLE IF NOT EXISTS Users (Imię_nazwisko TEXT NOT NULL, Email TEXT NOT NULL, Telefon TEXT NOT NULL, Username TEXT NOT NULL, Password TEXT NOT NULL)')
+
+                cursor.execute('INSERT INTO Users (Imię_nazwisko, Email, Telefon, Login, Hasło) VALUES (?,?,?,?,?)', (name, email, mobile, username, password))
+>>>>>>> c6d13d0af0a8d3a8882c8454f9400ea341ed8cc6
                 conn.commit()
 
                 ms.showinfo('Sukces', 'Konto zostało utworzone, możesz się zalogować')
@@ -72,7 +78,7 @@ def Register():
             ms.showerror('Błąd!', 'Wypełnij wszystkie pola!')
 
     name = tk.Label(frame, text = 'Imię i nazwisko', font=('Avenir Next LT Pro Demi',12, 'bold'), bg='white', fg='black')
-    email = tk.Label(frame, text = 'E-mail', font=('Avenir Next LT Pro Demi',12, 'bold'), bg='white', fg='black')
+    email = tk.Label(frame, text = 'Email', font=('Avenir Next LT Pro Demi',12, 'bold'), bg='white', fg='black')
     mobile = tk.Label(frame, text = 'Numer telefonu', font=('Avenir Next LT Pro Demi',12, 'bold'), bg='white', fg='black')
     username = tk.Label(frame, text = 'Login', font=('Avenir Next LT Pro Demi',12, 'bold'), bg='white', fg='black')
     password = tk.Label(frame, text = 'Hasło', font = ('Avenir Next LT Pro Demi',12,'bold'), bg='white', fg='black')
