@@ -59,14 +59,9 @@ def Register():
                 with conn:
                     cursor = conn.cursor()
 
-
                 cursor.execute('CREATE TABLE IF NOT EXISTS Users (FullName TEXT NOT NULL, Email TEXT NOT NULL, Mobile TEXT NOT NULL, Username TEXT NOT NULL, Password TEXT NOT NULL)')
 
-                cursor.execute('INSERT INTO Users (FullName, Email, Mobile, Username, Password) VALUES (?,?,?,?,?)', (name, email, mobile, username, password))
-
-                cursor.execute('CREATE TABLE IF NOT EXISTS Users (Imię_nazwisko TEXT NOT NULL, Email TEXT NOT NULL, Telefon TEXT NOT NULL, Username TEXT NOT NULL, Password TEXT NOT NULL)')
-
-                cursor.execute('INSERT INTO Users (Imię_nazwisko, Email, Telefon, Login, Hasło) VALUES (?,?,?,?,?)', (name, email, mobile, username, password))
+                cursor.execute('INSERT INTO Users (FullName, Email, Mobile, Username, Password) VALUES (?,?,?,?,?)',(name, email, mobile, username, password))
 
                 conn.commit()
 
@@ -131,4 +126,3 @@ def Register():
 
     Quit = tk.Button(Reg, text = "Zamknij", width="10", command = Reg.destroy, bd = '3',  font = ('Avenir Next LT Pro Demi', 12, 'bold'), bg='black', fg='white',relief='groove', justify = 'center', pady='5')
     Quit.place(anchor ='sw',rely=1,relx=0.84)
-    
