@@ -131,3 +131,4 @@ def Register():
 
     Quit = tk.Button(Reg, text = "Zamknij", width="10", command = Reg.destroy, bd = '3',  font = ('Avenir Next LT Pro Demi', 12, 'bold'), bg='black', fg='white',relief='groove', justify = 'center', pady='5')
     Quit.place(anchor ='sw',rely=1,relx=0.84)
+    

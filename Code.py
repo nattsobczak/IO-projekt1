@@ -48,4 +48,3 @@ def Quit():
 Quit = tk.Button(system, text = "Zamknij", width="10", command = Quit, bd = '3',  font = ('Avenir Next LT Pro Demi', 12, 'bold'), bg='#FFF5EE', fg='black',relief='groove', justify = 'center', pady='5')
 Quit.place(anchor ='sw',rely=1,relx=0.775)
 system.mainloop()
-    
